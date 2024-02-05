@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title> Flex box </title>
+ <style>
+ 	*{
+ 	 margin : 0;
+      padding : 0;
+ 	}
+ body{
+ 	background-color : lightblue;
+ 	}
+ 	.main{
+ 	  border : 2px solid blue;
+       margin : 150px 20px  150px  20px;
+       padding : 20px 10px  10px  10px;
+       height : 300;
+       background-image : linear-gradient(lightgray, gray);
+       border-radius : 10px;
+ 	}
+ .submain{
+ 	position : relative;
+     top : -120px;
+     left : 5px;
+ 	}
+ .r{
+ 	font-size : 25;
+ 	}
+ #solution{
+ 	margin-top : -10px;
+     margin-left : 10px;
+ 	}
+ #rd{
+ 	height: 25;
+     border-width : 0px;
+     border-radius : 10px;
+     padding-left : 10px;
+     margin-left : 10px;
+ 	}
+ #ans{
+ 	overflow-x: scroll;
+     width : 100px;
+     position: relative;
+     top : -30px;
+     left : 50;
+ }
+     .btn{
+     	    background-color  : brown;
+             border-radius : 15px;
+             color : white;
+             height : 25;
+             width : 100;
+             font-size : 15;
+             border-width:0px;
+     	}
+ .circle {
+ 	position : relative;
+      top : -130px;
+      left : 150px;
+      stroke : blue; 
+      stroke-width : 2;
+ 	}
+ </style>
+ <body>
+ 	<section class = "main">
+ 	<h1> Circle </h1>
+     <p> Solve for Area </p>  <br>
+    <h1> A  = <div id = "ans"><small>&#8508;r<sup>2</sup></small></div> </h1>
+     	<svg width = "150" height = "150" class = "circle">
+     	<circle cx = "80" cy = "80" r = "50" fill = "greenyellow"  class = "circle">
+     	</circle>
+     	</svg> <br>
+     <section class = "submain">	
+ <b class = "r">  r  </b>  (Radius)  :   <input type = "number" id = "rd" placeholder  = "Enter value" > <br><br>
+ 	<button onclick = "area()" class = "btn"> Get answer </button> <br><br>
+ 	<h3> Solution </h3> <br> 
+ <p id = "solution"> </p>
+ 	</section>
+ </section>
+ <script>
+ 	function area() {
+      let a = document.getElementById("rd"). value;
+    if(a == ''){
+    	alert('Please enter radius ! ');
+    return;
+}
+       let A =  3.14 * a * a;
+     document.getElementById("solution").innerHTML = A;   
+     document.getElementById("ans").innerHTML = A;   
+       }	
+ 	</script>
+ </body>
+ </html>
